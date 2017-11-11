@@ -1,4 +1,4 @@
-package io.github.dziadeusz;
+package io.github.dziadeusz.trees;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
