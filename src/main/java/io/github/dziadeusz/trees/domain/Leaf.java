@@ -1,9 +1,23 @@
 package io.github.dziadeusz.trees.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "leaf")
-public class Leaf extends BaseEntity{
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+class Leaf extends BaseEntity{
+
+    String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "branch_id")
+    Branch branch;
 }

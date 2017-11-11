@@ -1,5 +1,7 @@
 package io.github.dziadeusz.trees.domain;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.GeneratedValue;
@@ -8,7 +10,9 @@ import javax.persistence.MappedSuperclass;
 import java.util.UUID;
 
 @MappedSuperclass
-public class BaseEntity {
+@EqualsAndHashCode(of="uuid")
+@Getter
+class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
