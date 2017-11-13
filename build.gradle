@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.8.RELEASE'
+		springBootVersion = '1.5.7.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -29,4 +29,8 @@ dependencies {
 	compile group: 'net.ttddyy', name: 'datasource-proxy', version: '1.4.4'
 	compile group: 'net.ttddyy', name: 'datasource-assert', version: '1.0'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+	testCompile 'org.spockframework:spock-spring:1.1-groovy-2.4'
+	testRuntime 'cglib:cglib-nodep:3.2.4'
+	testCompile 'com.h2database:h2'
 }

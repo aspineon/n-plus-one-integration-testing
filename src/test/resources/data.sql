@@ -1,0 +1,1 @@
+INSERT INTO tree(id, name) values (1, 'test tree');

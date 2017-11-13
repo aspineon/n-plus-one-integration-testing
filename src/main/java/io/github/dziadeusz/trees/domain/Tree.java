@@ -1,9 +1,6 @@
 package io.github.dziadeusz.trees.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,7 +11,6 @@ import java.util.Set;
 @Entity
 @Table(name = "tree")
 @Builder
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 class Tree extends BaseEntity {
