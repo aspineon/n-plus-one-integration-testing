@@ -16,6 +16,10 @@ class Branch extends BaseEntity {
     String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tree_id")
+    Tree tree;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "branch_id")
     Branch branch;
 
