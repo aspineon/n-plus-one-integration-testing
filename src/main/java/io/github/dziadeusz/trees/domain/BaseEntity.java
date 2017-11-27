@@ -2,19 +2,19 @@ package io.github.dziadeusz.trees.domain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.UUID;
 
 @MappedSuperclass
-@EqualsAndHashCode(of="uuid")
 @Getter
+@EqualsAndHashCode(of="uuid")
 class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String uuid = UUID.randomUUID().toString();
+    private Long id;
+    protected String uuid = UUID.randomUUID().toString();
 }

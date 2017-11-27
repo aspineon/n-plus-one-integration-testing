@@ -1,9 +1,6 @@
 package io.github.dziadeusz.trees.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -11,11 +8,16 @@ import java.util.Set;
 @Entity
 @Table(name = "branch")
 @Builder
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 class Branch extends BaseEntity {
     String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tree_id")
+    Tree tree;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "branch_id")
