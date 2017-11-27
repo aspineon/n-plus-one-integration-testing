@@ -62,14 +62,15 @@ class TreeFacadeTest extends Specification {
 
     }
 
-    private treeIsFetchedWithAllDependencies(TreeDto tree) {
-        tree.name == 'test tree' &&
-        tree.branches.size() == 5
-    }
-
     def 'should get the tree with dependencies with multiple selects due to the n+1 problem'() {
         TreeDto tree = uut.getTreeWithNplusOne("test tree");
         treeIsFetchedWithAllDependencies(tree) == true
         testDataSource.getQueryExecutions().size() == 1
+    }
+
+    private treeIsFetchedWithAllDependencies(TreeDto tree) {
+        tree.name == 'test tree' &&
+                tree.getBranches().size() == 5 &&
+                tree.getBranches()
     }
 }
