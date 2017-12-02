@@ -1,6 +1,7 @@
 package io.github.dziadeusz.trees.domain;
 
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,8 +14,12 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 class Tree extends BaseEntity {
+
     String name;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "branch")
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tree")
     Set<Branch> branches;
 }
