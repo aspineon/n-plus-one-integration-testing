@@ -12,7 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-class Leaf extends BaseEntity{
+class Leaf extends BaseEntity {
 
     String name;
 

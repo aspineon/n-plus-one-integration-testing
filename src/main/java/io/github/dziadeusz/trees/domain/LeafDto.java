@@ -16,7 +16,7 @@ public class LeafDto {
         return leafs.stream().map(LeafDto::fromEntity).collect(Collectors.toSet());
     }
 
-    private static LeafDto fromEntity(Leaf leaf) {
+    private static LeafDto fromEntity(final Leaf leaf) {
         return LeafDto.builder().name(leaf.getName()).build();
     }
 }

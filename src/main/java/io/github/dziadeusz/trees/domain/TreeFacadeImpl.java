@@ -9,20 +9,20 @@ class TreeFacadeImpl implements TreeFacade {
 
     private final TreeRepository treeRepository;
 
-    public TreeFacadeImpl(TreeRepository treeRepository) {
+    public TreeFacadeImpl(final TreeRepository treeRepository) {
         this.treeRepository = treeRepository;
     }
 
     @Override
     public TreeDto getTreeWithSingleSelect(final String name) {
-        final Tree tree = treeRepository.findTreeWithBranchesAndLeafs(name);
+        final Tree tree = treeRepository.findTreeByNameWithBranchesAndLeafs(name);
         return TreeDto.fromEntity(tree);
     }
 
     @Override
     @Transactional
-    public TreeDto getTreeWithNplusOne(String name) {
-        final Tree tree = treeRepository.findByName(name);
+    public TreeDto getTreeWithNplusOne(final String name) {
+        final Tree tree = treeRepository.findTreeByName(name);
         return TreeDto.fromEntity(tree);
     }
 }

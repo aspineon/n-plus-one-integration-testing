@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @MappedSuperclass
 @Getter
-@EqualsAndHashCode(of="uuid")
+@EqualsAndHashCode(of = "uuid")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 class BaseEntity {
 

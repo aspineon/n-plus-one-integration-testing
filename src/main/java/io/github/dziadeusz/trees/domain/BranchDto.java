@@ -14,11 +14,11 @@ public class BranchDto {
 
     Set<LeafDto> leafs;
 
-    public static Set<BranchDto> fromEntities(Set<Branch> branches) {
+    public static Set<BranchDto> fromEntities(final Set<Branch> branches) {
         return branches.stream().map(BranchDto::fromEntity).collect(Collectors.toSet());
     }
 
-    private static BranchDto fromEntity(Branch branch) {
+    private static BranchDto fromEntity(final Branch branch) {
         return BranchDto
                 .builder()
                 .name(branch.getName())
